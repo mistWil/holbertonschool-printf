@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					f = is_known_spec(&format[i + 1]);
+					fdisplay = is_known_spec(&format[i + 1]);
 					j += fdisplay(args);
 					i++;
 				}
