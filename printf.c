@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  *_printf - prints to output according to format
  *@format: character string containing format specification
@@ -38,6 +37,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+			_putchar('%');
 			_putchar(format[i]);
 			ctr++;
 		}
