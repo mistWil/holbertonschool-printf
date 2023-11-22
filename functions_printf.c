@@ -64,7 +64,7 @@ int print_str(va_list args)
 }
 
 /**
- *print_pct - print "%"
+ *print_percent - print "%"
  *@args : arguments
  *
  *Return: "%"
