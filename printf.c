@@ -31,19 +31,20 @@ int _printf(const char *format, ...)
 			ctr += pDisplay(list);
 		else
 		{
-			if (format[i] == '\0')
+			if (format[i] == '\0')  /* Cas "%" */
 			{
 				ctr = -1;
 				continue;
 			}
-			if (format[i] == '%')
+			if (format[i] == '%')	/* Cas %% */
 				_putchar('%');
 			else
 			{
 				_putchar(format[i - 1]);
 				_putchar(format[i]);
+				ctr += 1;
 			}
-			ctr += 2;
+			ctr += 1;
 		}
 		i++;
 	}
