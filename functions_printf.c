@@ -1,27 +1,27 @@
 #include "main.h"
 
 /**
- * get_func - check for known specifier
+ * is_known_spec - check for known specifier
  * @format: character to check
  * Return: pointer to function
  */
-int (*get_func(const char *format))(va_list)
+int (*is_known_spec(const char *format))(va_list)
 {
 	int i;
-	func_t p[] = {
+	t_display display[] = {
 		{"c", print_char},
 		{"s", print_str},
-		{"%", print_pct},
-		{"d", print_dec},
-		{"i", print_dec},
+		{"%", print_percent},
+		{"d", print_decim},
+		{"i", print_decim},
 		{NULL, NULL}
 	};
 
-	for (i = 0; p[i].t; i++)
+	for (i = 0; display[i].format_type; i++)
 	{
-		if (*format == *(p[i].t))
+		if (*format == *(display[i].format_type))
 		{
-			return (p[i].f);
+			return (display[i].fdisplay);
 		}
 	}
 	return (NULL);
@@ -69,7 +69,7 @@ int print_str(va_list args)
  *
  *Return: "%"
  */
-int print_pct(va_list args)
+int print_percent(va_list args)
 {
 	(void)args;
 	return (write(1, "%", 1));
