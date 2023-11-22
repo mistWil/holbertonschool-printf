@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_dec - prints decimal
+ * print_decim - prints decimal
  * @args: the argument decimal
  *
  * Return: counter
