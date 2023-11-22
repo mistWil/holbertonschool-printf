@@ -1,5 +1,5 @@
 #include <stdarg.h>
-#include "holberton.h"
+#include "main.h"
 
 /**
  *_printf - prints to output according to format
