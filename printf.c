@@ -1,5 +1,6 @@
 #include "main.h"
 
+
 /**
  *_printf - prints to output according to format
  *@format: character string containing format specification
@@ -15,13 +16,14 @@ int _printf(const char *format, ...)
 	int (*pDisplay)(va_list va);
 
 	va_start(list, format);
-	while (format[i] && format != NULL)
+	if (format == NULL)
+		return (-1);
+	while (format[i])
 	{
 		if (format[i] != '%')
 		{
-			_putchar (format[i]);
+			_putchar (format[i++]);
 			ctr++;
-			i++;
 			continue;
 		}
 		i++;
@@ -35,15 +37,14 @@ int _printf(const char *format, ...)
 				ctr = -1;
 				continue;
 			}
-			if (format[i] == '%')	/* Cas %% */
-				_putchar('%');
+			if (format[i] == '%')   /* Cas "%%" */
+				ctr += _putchar('%');
 			else
-			{
+			{  /* cas %K ou %! : il y a un % mais le format n'est pas reconnu */
 				_putchar(format[i - 1]);
 				_putchar(format[i]);
-				ctr += 1;
+				ctr += 2;
 			}
-			ctr += 1;
 		}
 		i++;
 	}
