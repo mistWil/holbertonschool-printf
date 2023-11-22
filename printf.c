@@ -27,7 +27,6 @@ int _printf(const char *format, ...)
 			i++;
 			continue;
 		}
-		/* C'est un % */
 		i++;
 		pDisplay = isCharFormat(format[i]);
 		if (pDisplay != NULL)
@@ -37,7 +36,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar('%');
+			_putchar(format[i - 1]);
 			_putchar(format[i]);
 			ctr++;
 		}
