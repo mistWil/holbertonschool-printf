@@ -7,11 +7,11 @@
  * Return: counter
  */
 
-int print_dec(va_list args)
+int print_decim(va_list args)
 {
 	int value;
-	unsigned int abs, a, len;
-	unsigned int countn = 1;
+	unsigned int abs_value, a, len;
+	unsigned int ctr = 1;
 
 	len = 0;
 
@@ -20,21 +20,21 @@ int print_dec(va_list args)
 	if (value < 0)
 	{
 		len = len + _putchar('-');
-		abs = value * -1;
+		abs_value = value * -1;
 	}
 	else
-		abs = value;
+		abs_value = value;
 
-	a = abs;
+	a = abs_value;
 	while (a > 9)
 	{
 		a = a / 10;
-		countn = countn * 10;
+		ctr = ctr * 10;
 	}
-	while (countn >= 1)
+	while (ctr >= 1)
 	{
-		len = len + _putchar(((abs / countn) % 10) + '0');
-		countn = countn / 10;
+		len = len + _putchar(((abs_value / ctr) % 10) + '0');
+		ctr = ctr / 10;
 	}
 	return (len);
 }
