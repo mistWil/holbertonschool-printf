@@ -9,11 +9,14 @@
 #include <string.h>
 
 /**
- * struct t_display - type structure
- * @format_type: pointer to the argument
- * @fdisplay: pointer function associated with the argument
+ * struct t_display - Format specifier and associated display function
+ *
+ * @format_type: Format specifier string.
+ * @fdisplay: Pointer to the function for displaying the format.
+ *
  */
-typedef struct 
+
+typedef struct t_display
 {
 	char *format_type;
 	int (*fdisplay)(va_list);
