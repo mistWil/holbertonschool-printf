@@ -3,31 +3,32 @@
 
 #include <stdarg.h>
 #include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
 #include <limits.h>
-#include <string.h>
+#include <unistd.h>
 
 /**
- * struct t_display - Format specifier and associated display function
+ * struct tdisplay - Format specifier and associated display function
  *
  * @format_type: Format specifier string.
  * @fdisplay: Pointer to the function for displaying the format.
  *
  */
-
-typedef struct t_display
+typedef struct tdisplay
 {
-	char *format_type;
+	char format_type;
 	int (*fdisplay)(va_list);
-} t_display;
+} tdisplay;
 
-int (*is_known_spec(const char *format))(va_list);
-int _putchar(char c);
+/*Prototype de fonctions*/
 int _printf(const char *format, ...);
-int print_str(va_list args);
-int print_char(va_list args);
-int print_percent(va_list args);
-int print_decim(va_list args);
+
+int _putchar(char c);
+
+
+int display_string(va_list args);
+int display_char(va_list args);
+int display_percent(va_list args);
+int (*isCharFormat(char carac)) (va_list);
 
 #endif
+
