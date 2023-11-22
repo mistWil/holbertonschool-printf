@@ -75,3 +75,43 @@ int print_pct(va_list args)
 	return (write(1, "%", 1));
 }
 
+#include "holberton.h"
+
+/**
+ * print_dec - prints decimal
+ * @args: the argument decimal
+ *
+ * Return: counter
+ */
+
+int print_dec(va_list args)
+{
+	int value;
+	unsigned int num, a, len;
+	unsigned int ctr = 1;
+
+	len = 0;
+
+	value = va_arg(args, int);
+
+	if (value < 0)
+	{
+		len = len + _putchar('-');
+		num = value * -1;
+	}
+	else
+		num = value;
+
+	a = num;
+	while (a > 9)
+	{
+		a = a / 10;
+		ctr = ctr * 10;
+	}
+	while (ctr >= 1)
+	{
+		len = len + _putchar(((abs / countn) % 10) + '0');
+		ctr = ctr / 10;
+	}
+	return (len);
+}
