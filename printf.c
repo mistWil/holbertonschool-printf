@@ -6,6 +6,9 @@
  *
  * Return: number of characters printed or -1 if format NULL
  */
+
+#include "main.h"
+
 int _printf(const char *format, ...)
 {
 	va_list list;
@@ -23,24 +26,22 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 			ctr++;
-			i++;
-			continue;
-		}
-		i++;
-		if (format[i] == '\0')
-			break; /* Handle case where '%' is at the end of the string */
-
-		pDisplay = isCharFormat(format[i]);
-		if (pDisplay != NULL)
-		{
-			/*This is a known format character*/
-			ctr += pDisplay(list);
 		}
 		else
 		{
-			_putchar('%');
-			_putchar(format[i]);
-			ctr += 2;
+			i++;
+			if (format[i] == '\0')
+				break;
+
+			pDisplay = isCharFormat(format[i]);
+			if (pDisplay != NULL)
+				ctr += pDisplay(list);
+			else
+			{
+				_putchar('%');
+				_putchar(format[i]);
+				ctr += 2;
+			}
 		}
 		i++;
 	}
