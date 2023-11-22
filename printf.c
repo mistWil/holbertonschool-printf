@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- *_printf - prints to output according to format
- *@format: character string containing format specification
+ * _printf - prints to output according to format
+ * @format: character string containing format specification
  *
- *Return: number of characters printed or -1 if format NULL
+ * Return: number of characters printed or -1 if format NULL
  */
-
 int _printf(const char *format, ...)
 {
 	va_list list;
@@ -22,23 +21,26 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			_putchar (format[i]);
+			_putchar(format[i]);
 			ctr++;
 			i++;
 			continue;
 		}
 		i++;
+		if (format[i] == '\0')
+			break; /* Handle case where '%' is at the end of the string */
+
 		pDisplay = isCharFormat(format[i]);
 		if (pDisplay != NULL)
 		{
-			/* This is a known format character */
+			/*This is a known format character*/
 			ctr += pDisplay(list);
 		}
 		else
 		{
-			_putchar(format[i - 1]);
+			_putchar('%');
 			_putchar(format[i]);
-			ctr++;
+			ctr += 2;
 		}
 		i++;
 	}
@@ -46,3 +48,4 @@ int _printf(const char *format, ...)
 	va_end(list);
 	return (ctr);
 }
+
