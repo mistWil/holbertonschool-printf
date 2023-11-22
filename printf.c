@@ -16,7 +16,9 @@ int _printf(const char *format, ...)
 	int (*pDisplay)(va_list va);
 
 	va_start(list, format);
-	while (format[i] && format != NULL)
+	if (format == NULL)
+		return (-1);
+	while (format[i])
 	{
 		if (format[i] != '%')
 		{
@@ -37,17 +39,15 @@ int _printf(const char *format, ...)
 				continue;
 			}
 			if (format[i] == '%')	/* Cas %% */
-				_putchar('%');
+				ctr += _putchar('%');
 			else
-			{
+			{	/* cas %K ou %! : il y a un % mais le format n'est pas reconnu */
 				_putchar(format[i - 1]);
 				_putchar(format[i]);
-				ctr += 1;
+				ctr += 2;
 			}
-			ctr += 1;
 		}
 		i++;
 	}
 	va_end(list);
 	return (ctr);
-}
