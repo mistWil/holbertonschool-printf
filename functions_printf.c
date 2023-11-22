@@ -1,76 +1,122 @@
 #include "main.h"
 
-/**
- * is_known_spec - check for known specifier
- * @format: character to check
- * Return: pointer to function
- */
-int (*is_known_spec(const char *format))(va_list)
-{
-	int i;
-	t_display display[] = {
-		{"c", print_char},
-		{"s", print_str},
-		{"%", print_percent},
-		{"d", print_decim},
-		{"i", print_decim},
-		{NULL, NULL}
-	};
-
-	for (i = 0; display[i].format_type; i++)
-	{
-		if (*format == *(display[i].format_type))
-		{
-			return (display[i].fdisplay);
-		}
-	}
-	return (NULL);
-}
 
 /**
- *print_char - prints character
+ *display_char - prints a character
  *@args: argument
  *
- *Return: character
+ *Return: 1, only one character printed
  */
 
-int print_char(va_list args)
+int display_char(va_list args)
 {
-
-	_putchar(va_arg(args, int));
+	/*fprintf(stderr,"display_char\n");*/
+	_putchar ((char) va_arg(args, int));
 	return (1);
 }
 
-
 /**
- *print_str - print string
- *@args: arguments
- *Return: string
+ *display_int - prints a integer
+ *@args: argument
+ *
+ *Return: lenght of string printed character printed
  */
 
-int print_str(va_list args)
+int display_int(va_list args)
 {
+	int value;
+	unsigned int abs, a, ctr;
+	unsigned int countn = 1;
 
-	int j;
+	ctr = 0;
+
+	value = va_arg(args, int);
+
+	if (value < 0)
+	{
+		ctr = ctr + _putchar('-');
+		abs = value * -1;
+	}
+	else
+		abs = value;
+
+	a = abs;
+	while (a > 9)
+	{
+		a = a / 10;
+		countn = countn * 10;
+	}
+	while (countn >= 1)
+	{
+		ctr = ctr + _putchar(((abs / countn) % 10) + '0');
+		countn = countn / 10;
+	}
+	return (ctr);
+}
+
+
+/**
+ *display_string - prints a string
+ *@args: argument
+ *
+ *Return: length of string printed
+ */
+
+int display_string(va_list args)
+{
 	char *str = va_arg(args, char *);
+	int ctr = 0;
 
 	if (str == NULL)
 		str = "(null)";
-	for (j = 0; str[j]; j++)
+	while (*str != '\0')
 	{
-		_putchar(str[j]);
+		_putchar (*str);
+		str++;
+		ctr++;
 	}
-	return (j);
+	return (ctr);
 }
 
 /**
- *print_percent - print "%"
- *@args : arguments
+ *display_percent - prints character %
+ *@args: argument
  *
- *Return: "%"
+ *Return: 1, only one character printed
  */
-int print_percent(va_list args)
+
+int display_percent(va_list args)
 {
 	(void)args;
-	return (write(1, "%", 1));
+	_putchar ('%');
+	return (1);
+}
+
+/**
+ *isCharFormat - returns pointer to print function per format type
+ *@carac: to help figure out if known character
+ *
+ *Return: pointeur to print function
+ */
+
+int (*isCharFormat(char carac)) (va_list)
+{
+	int i = 0;
+
+	/*tableau de structures associé à la structure "tdisplay"*/
+	tdisplay display[] = {
+		{'c', display_char},
+		{'s', display_string},
+		{'%', display_percent},
+		{'d', display_int},
+		{'i', display_int},
+		{'\0', NULL}
+	};
+
+	while (display[i].format_type != carac && display[i].format_type != '\0')
+		i++;
+	if (display[i].format_type != '\0')
+		return (display[i].fdisplay);
+
+	return (NULL);
 }
