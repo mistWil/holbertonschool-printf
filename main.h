@@ -9,22 +9,22 @@
 #include <string.h>
 
 /**
- * struct func_type - type structure
- * @t: pointer to the argument
- * @f: pointer-function associated with the argument
+ * struct t_display - type structure
+ * @format_type: pointer to the argument
+ * @fdisplay: pointer function associated with the argument
  */
-typedef struct func_type
+typedef struct 
 {
-	char *t;
-	int (*f)(va_list);
-} func_t;
+	char *format_type;
+	int (*fdisplay)(va_list);
+} t_display;
 
-int (*get_func(const char *format))(va_list);
+int (*is_known_spec(const char *format))(va_list);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_str(va_list args);
 int print_char(va_list args);
-int print_pct(va_list args);
-int print_dec(va_list args);
+int print_percent(va_list args);
+int print_decim(va_list args);
 
 #endif
