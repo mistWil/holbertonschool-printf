@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, j = 0;
-	int (*f)(va_list);
+	int (*fdisplay)(va_list);
 	va_list args;
 
 	va_start(args, format);
@@ -33,8 +33,8 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					f = get_func(&format[i + 1]);
-					j += f(args);
+					f = is_known_spec(&format[i + 1]);
+					j += fdisplay(args);
 					i++;
 				}
 			}
