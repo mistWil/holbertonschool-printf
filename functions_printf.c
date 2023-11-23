@@ -93,13 +93,13 @@ int display_percent(va_list args)
 }
 
 /**
- *isCharFormat - returns pointer to print function per format type
+ *is_char_format - returns pointer to print function per format type
  *@carac: to help figure out if known character
  *
- *Return: pointeur to print function
+ *Return: pointer to print function
  */
 
-int (*isCharFormat(char carac)) (va_list)
+int (*is_char_format(char carac)) (va_list)
 {
 	int i = 0;
 
