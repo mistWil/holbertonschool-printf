@@ -73,6 +73,7 @@ OUTPUT:
 
 alex@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 alex@ubuntu:~/c/printf$ ./printf
+
 Let's try to printf a simple sentence.
 Let's try to printf a simple sentence.
 Length:[39, 39]
@@ -98,5 +99,3 @@ Len:[12]
 Unknown:[%r]
 Unknown:[%r]
 
-END
----
