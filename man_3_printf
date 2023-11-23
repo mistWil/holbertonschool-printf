@@ -1,0 +1,53 @@
+.TH _PRINTF(1)                    Library Functions Manual                    _PRINTF(1)
+
+.SH NAME
+       _printf - format and print data
+
+.SH SYNOPSIS
+       #include <stdio.h>
+       #include <stdarg.h>
+       #include <limits.h>
+       #include <unistd.h>
+
+       int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+       The printf function formats and prints data to standard output according
+       to the format string format.
+
+       The format string may contain format specifiers introduced by the character %.
+
+.SH OPTIONS
+       -c   Prints a character.
+
+       -s   Prints a string.
+
+       -d, -i
+            Prints an integer.
+
+       -%
+            Prints a percent sign.
+
+.SH RETURN VALUE
+       The _printf function returns the number of characters printed (excluding
+       the null byte used to end output to strings).
+
+.SH EXAMPLES
+       Print a string:
+       _printf("Hello, %s!\n", "world");
+
+       Print an integer:
+       _printf("The answer is: %d\n", 42);
+
+.SH AUTHORS
+       This man page was written by Chloe Correia & Wilfried Leroulier.
+
+.SH COPYRIGHT
+       Copyright © 2023 Holbertonschool. This is free software; see the
+       source code for copying conditions.
+
+.SH NOTES
+       This man page is intended to provide a basic structure. Please customize
+       it based on your specific implementation and options.
+
+
