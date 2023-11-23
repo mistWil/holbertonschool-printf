@@ -32,12 +32,12 @@ int _printf(const char *format, ...)
 			ctr += pDisplay(list); /* call function and update the counter */
 		else
 		{
-			if (format[i] == '\0')  /* if it's "%" */
+			if (format[i] == '\0')
 			{
 				ctr = -1;
 				continue;
 			}
-			if (format[i] == '%') /* if it's a "%%" print one "%" */
+			if (format[i] == '%')
 				ctr += _putchar('%');
 			else
 			{
