@@ -12,35 +12,35 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	int i = 0;
-	int ctr = 0;
+	int ctr = 0; /* counter */
 	int (*pDisplay)(va_list va);
 
 	va_start(list, format);
-	if (format == NULL)
+	if (format == NULL) /* check if the format is "NULL" */
 		return (-1);
 	while (format[i])
 	{
-		if (format[i] != '%')
+		if (format[i] != '%') /* print non-% characters */
 		{
 			_putchar (format[i++]);
 			ctr++;
 			continue;
 		}
 		i++;
-		pDisplay = isCharFormat(format[i]);
+		pDisplay = isCharFormat(format[i]); /* get format specifier function */
 		if (pDisplay != NULL)
-			ctr += pDisplay(list);
+			ctr += pDisplay(list); /* call function and update the counter */
 		else
 		{
-			if (format[i] == '\0')  /* Cas "%" */
+			if (format[i] == '\0')  /* if it's "%" */
 			{
 				ctr = -1;
 				continue;
 			}
-			if (format[i] == '%')   /* Cas "%%" */
+			if (format[i] == '%') /* if it's a "%%" print one "%" */
 				ctr += _putchar('%');
 			else
-			{  /* cas %K ou %! : il y a un % mais le format n'est pas reconnu */
+			{  /* if it's %K or %! : there is a "%" but the format is unknown*/
 				_putchar(format[i - 1]);
 				_putchar(format[i]);
 				ctr += 2;
