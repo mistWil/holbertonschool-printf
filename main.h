@@ -24,11 +24,10 @@ int _printf(const char *format, ...);
 
 int _putchar(char c);
 
-
 int display_string(va_list args);
 int display_char(va_list args);
 int display_percent(va_list args);
-int (*isCharFormat(char carac)) (va_list);
+int (*is_char_format(char carac)) (va_list);
 
 #endif
 
