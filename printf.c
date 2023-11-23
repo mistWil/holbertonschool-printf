@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	va_list list;
 	int i = 0;
 	int ctr = 0; /* counter */
-	int (*pDisplay)(va_list va);
+	int (*pDisplay)(va_list list);
 
 	va_start(list, format);
 	if (format == NULL)
