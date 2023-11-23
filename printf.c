@@ -16,11 +16,11 @@ int _printf(const char *format, ...)
 	int (*pDisplay)(va_list va);
 
 	va_start(list, format);
-	if (format == NULL) /* check if the format is "NULL" */
+	if (format == NULL)
 		return (-1);
 	while (format[i])
 	{
-		if (format[i] != '%') /* print non-% characters */
+		if (format[i] != '%')
 		{
 			_putchar (format[i++]);
 			ctr++;
@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			if (format[i] == '%') /* if it's a "%%" print one "%" */
 				ctr += _putchar('%');
 			else
-			{  /* if it's %K or %! : there is a "%" but the format is unknown*/
+			{
 				_putchar(format[i - 1]);
 				_putchar(format[i]);
 				ctr += 2;
