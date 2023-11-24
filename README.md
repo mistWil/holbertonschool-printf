@@ -25,7 +25,7 @@ The imposed requirements for this project are as follows:
 6. Not more than 5 functions per file
 7. All .c files must include the "main.h" header
 
-## :floppy_disk: <span id="specifiers">Specifiers</a>
+## <span id="specifiers">Specifiers</a> :clipboard:
 
 | SPECIFIER |                     DESCRIPTION                      |
 | :-------: | :--------------------------------------------------: |
