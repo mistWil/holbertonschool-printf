@@ -116,8 +116,7 @@ Unknown:[%r]
 ```
 ******
 AUTHORS C#22 :black_nib:
-******
-
+------------
 **Chloé CORREIA** and **Wilfried LEROULIER**
 
 ******
