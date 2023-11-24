@@ -115,10 +115,9 @@ Unknown:[%r]
 Unknown:[%r]
 ```
 ******
-AUTHORS :black_nib:
+AUTHORS C#22 :black_nib:
 ******
-**Chloé CORREIA**
-**Wilfried LEROULIER**
+Chloé CORREIA and Wilfried LEROULIER
 
 ******
 FLOWCHARTS
