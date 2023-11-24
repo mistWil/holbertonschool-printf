@@ -118,7 +118,10 @@ Unknown:[%r]
 AUTHORS C#22 :black_nib:
 ******
 &nbsp;
+&nbsp;
 **Chloé CORREIA** and **Wilfried LEROULIER**
+&nbsp;
+&nbsp;
 &nbsp;
 ******
 FLOWCHARTS
