@@ -1,6 +1,6 @@
 CREATE A PRINTF FUNCTION
 
-![istockphoto-180662560-612x612](https://github.com/mistWil/holbertonschool-printf/assets/127857895/cacf2be2-173e-4a4e-b2fe-eda030b7ff55)
+![63eea844ae4e3022154e2878_Holberton-removebg-preview](https://github.com/mistWil/holbertonschool-printf/assets/127857895/b9aa93fc-7297-4e4f-a1fa-5a9294f0952d)
 
 GENERAL PRESENTATION
 --------------------
