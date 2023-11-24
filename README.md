@@ -1,6 +1,6 @@
 ![63eea844ae4e3022154e2878_Holberton-removebg-preview](https://github.com/mistWil/holbertonschool-printf/assets/127857895/b9aa93fc-7297-4e4f-a1fa-5a9294f0952d)
 
-CREATING A CUSTOM A PRINTF FUNCTION
+CREATING A CUSTOM PRINTF FUNCTION
 
 GENERAL PRESENTATION
 --------------------
