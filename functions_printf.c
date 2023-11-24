@@ -114,7 +114,8 @@ int (*is_char_format(char carac)) (va_list)
 	};
 
 	while (display[i].format_type != carac && display[i].format_type != '\0')
-	{	i++;
-		return (display[i].fdisplay);
+	{	
+		i++;
 	}
+		return (display[i].fdisplay);
 }
