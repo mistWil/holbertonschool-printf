@@ -1,5 +1,7 @@
 CREATE A PRINTF FUNCTION
 
+![istockphoto-180662560-612x612](https://github.com/mistWil/holbertonschool-printf/assets/127857895/cacf2be2-173e-4a4e-b2fe-eda030b7ff55)
+
 GENERAL PRESENTATION
 --------------------
 In this project, the goal is to recreate the printf function, available in the standard library in the C language. This function allows the display of characters on the user interface.
@@ -25,7 +27,7 @@ The imposed requirements for this project are as follows:
 6. Not more than 5 functions per file
 7. All .c files must include the "main.h" header
 
-## <span id="specifiers">Specifiers</a> :clipboard:
+## <span id="specifiers">Specifiers</a> :notebook_with_decorative_cover:
 
 | SPECIFIER |                     DESCRIPTION                      |
 | :-------: | :--------------------------------------------------: |
