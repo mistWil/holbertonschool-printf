@@ -1,7 +1,5 @@
-CREATE A PRINTF FUNCTION
-
 ![63eea844ae4e3022154e2878_Holberton-removebg-preview](https://github.com/mistWil/holbertonschool-printf/assets/127857895/b9aa93fc-7297-4e4f-a1fa-5a9294f0952d)
-
+CREATING A CUSTOM A PRINTF FUNCTION
 GENERAL PRESENTATION
 --------------------
 In this project, the goal is to recreate the printf function, available in the standard library in the C language. This function allows the display of characters on the user interface.
