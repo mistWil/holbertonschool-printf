@@ -119,7 +119,7 @@ AUTHORS C#22 :black_nib:
 ------------
 **Chloé CORREIA** and **Wilfried LEROULIER**
 
-******
+
 FLOWCHARTS :chart_with_upwards_trend:
 ------------
 
