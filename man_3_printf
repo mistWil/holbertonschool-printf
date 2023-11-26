@@ -34,14 +34,13 @@
 
 .SH EXAMPLES
        Print a string:
-       _printf("Hello, %s!\n", "world");
+       _printf("Hello there, %s!\n", "good morning");
 
        Print an integer:
-       _printf("The answer is: %d\n", 42);
+       _printf("This is the answer you are looking for: %d\n", 42);
 
 .SH AUTHORS
        This man page was written by Chloe Correia & Wilfried Leroulier.
 
 .SH COPYRIGHT
-       Copyright © 2023 Holbertonschool. This is free software; see the
-       source code for copying conditions.
+       Copyright © 2023 Holbertonschool.
