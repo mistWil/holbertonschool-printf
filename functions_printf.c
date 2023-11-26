@@ -10,7 +10,6 @@
 
 int display_char(va_list args)
 {
-	/*fprintf(stderr,"display_char\n");*/
 	_putchar ((char) va_arg(args, int));
 	return (1);
 }
