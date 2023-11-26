@@ -1,4 +1,4 @@
-.TH _PRINTF(1)                    Manual For Function _printf                        _PRINTF(1)
+.TH _PRINTF(1)                                              Manual For Function _printf                                                      _PRINTF(1)
 
 .SH NAME
        _printf - format and print data
