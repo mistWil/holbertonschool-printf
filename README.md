@@ -130,5 +130,5 @@ FLOWCHARTS :chart_with_upwards_trend:
 
  :hash: TWO
 ---------
-![New Flowchart (3)](https://github.com/mistWil/holbertonschool-printf/assets/127857895/7f4107e3-35b4-4cfb-805a-8a2d2261cdb0)
+
 
